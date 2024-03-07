@@ -18,6 +18,7 @@ export const deleteEmployeeAsync = createAsyncThunk(
   async (id) => {
     const response = await deleteEmployee(id);
     // The value we return becomes the `fulfilled` action payload
+    // fetchemployeeAsync();
     return response.data;
   }
 );
@@ -33,6 +34,7 @@ export const employeeSlice = createSlice({
     builder.addCase(deleteEmployeeAsync.fulfilled, (state, action) => {
       alert("deleted successfully");
       console.log(state, action);
+
       // state.employees.push(...action.payload);
     });
   },
